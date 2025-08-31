@@ -1,0 +1,6 @@
+python-multipart
+requests
+fastapi
+python-dotenv
+pillow
+uvicorn[standard]
