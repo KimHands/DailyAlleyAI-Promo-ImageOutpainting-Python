@@ -1,6 +1,17 @@
-python-multipart
-requests
+# FastAPI & Server
 fastapi
-python-dotenv
-pillow
 uvicorn[standard]
+python-multipart
+
+# Utils
+requests
+pillow
+python-dotenv
+
+# AI / ML
+diffusers
+rembg
+onnxruntime
+google-generativeai
+openai
+torch

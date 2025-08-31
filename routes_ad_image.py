@@ -1,4 +1,5 @@
 # routes_ad_image.py
+
 import os, re
 from io import BytesIO
 from dotenv import load_dotenv
@@ -32,9 +33,8 @@ def _clamp_prompt(p: str, maxlen: int = 950) -> str:
 
 def _next_food_index() -> int:
     """
-    FOOD_DIR 안의 파일 중 ^(\d+)_food(_AI)?\.jpg 의 최대 번호 + 1
+    FOOD_DIR 안의 파일 이름 중 '숫자_food.jpg' 또는 '숫자_food_AI.jpg' 의 최대 번호 + 1
     """
-    _ensure_dir(FOOD_DIR)
     pat = re.compile(r"^(\d+)_food(_AI)?\.jpg$", re.IGNORECASE)
     max_n = 0
     for name in os.listdir(FOOD_DIR):

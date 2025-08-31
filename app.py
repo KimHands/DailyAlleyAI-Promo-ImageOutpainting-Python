@@ -1,3 +1,5 @@
+# app.py
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes_promo import router as promo_router
@@ -15,7 +17,7 @@ app.add_middleware(
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
 )
 
 @app.get("/health")
@@ -40,4 +42,4 @@ def index():
 
 app.include_router(promo_router)
 app.include_router(outpaint_router)
-app.include_router(upload_store_router)  # ✅ 추가
+app.include_router(upload_store_router)
